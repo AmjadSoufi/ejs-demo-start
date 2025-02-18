@@ -9,6 +9,24 @@
     <title>Mijn eerste EJS applicatie</title>
   </head>
   <body>
-    <h1>Welcome to EJS!</h1>
+    <nav>
+      <ul>
+        <% navItems.forEach(item => { %>
+        <li><a href="<%= item.url %>"><%= item.label %></a></li>
+        <% }) %>
+      </ul>
+    </nav>
+
+    <h1><%= title%></h1>
+    <p><%= content %></p>
+    <hr />
+    <% if(team){ %>
+    <h3>Maak kennis met ons team:</h3>
+    <ul>
+      <% team.forEach(dino=>{ %>
+      <li><%-dino %></li>
+      <% }); %>
+    </ul>
+    <% } %>
   </body>
 </html>
